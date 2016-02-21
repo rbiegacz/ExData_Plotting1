@@ -8,6 +8,7 @@ data2 <- subset(data1, strptime(V1, "%d/%m/%C%y") < strftime("2007/02/3", "%C%y-
 
 # making margins a little bit smaller
 par(mar = c(3,4,2,2))
+par(mfrow = c(1, 1))
 
 # OK, let's plot histogram for "Global Active Power" data
 plot(paste(data2$V7), type = "l", ylab = "Energy sub metering", xaxt = "n", col = "black")
