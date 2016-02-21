@@ -14,20 +14,20 @@ par(mar = c(4,4,1,1))
 par(mfrow = c(2, 2))
 
 # Drawing the first graph
-plot(paste(data2$V3), type = "l", ylab = "Global Active Power (kilowatts)", xlab = "")
+plot(paste(data2$V3), type = "l", ylab = "Global Active Power (kilowatts)", xlab = "", xaxt = "n")
 x <- c("Thu", "Fri", "Sat")
 xx <- c(1, nrow(data2)/2, nrow(data2))
 axis(1, at = xx, labels=x)
 
 # Drawing the second graph
-plot(paste(data2$V5), type = "l", ylab = "Voltage", xlab = "datetime")
+plot(paste(data2$V5), type = "l", ylab = "Voltage", xlab = "datetime", xaxt = "n")
 x <- c("Thu", "Fri", "Sat")
 xx <- c(1, nrow(data2)/2, nrow(data2))
 axis(1, at = xx, labels=x)
 
 # Drawing the third graph
 # OK, let's plot histogram for "Global Active Power" data
-plot(paste(data2$V7), type = "l", ylab = "Energy sub metering", xlab = "", col = "black")
+plot(paste(data2$V7), type = "l", ylab = "Energy sub metering", xlab = "", col = "black", xaxt = "n")
 points(paste(data2$V8), type = "l", xaxt = "n", col = "red")
 points(paste(data2$V9), type = "l", xaxt = "n", col = "blue")
 legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), pch = "-", col=c("black", "red", "blue"), lwd = 2)
@@ -38,7 +38,7 @@ xx <- c(1, nrow(data2)/2, nrow(data2))
 axis(1, at = xx, labels=x)
 
 # Drawing the forth graph
-plot(paste(data2$V4), type = "l", ylab = "Global reactive power", xlab = "datetime")
+plot(paste(data2$V4), type = "l", ylab = "Global reactive power", xlab = "datetime", xaxt = "n")
 x <- c("Thu", "Fri", "Sat")
 xx <- c(1, nrow(data2)/2, nrow(data2))
 axis(1, at = xx, labels=x)
