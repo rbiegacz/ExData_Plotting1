@@ -8,10 +8,15 @@ data2 <- subset(data1, strptime(V1, "%d/%m/%C%y") < strftime("2007/02/3", "%C%y-
 
 # OK, let's plot histogram for "Global Active Power" data
 #hist(as.numeric(paste(data2$V3)), col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
-plot(paste(data2$V3), type = "l", ylab = "Global Active Power (kilowatts)")
+
+plot(paste(data2$V3), type = "l", ylab = "Global Active Power (kilowatts)", xaxt = "n")
+x <- c("Thu", "Fri", "Sat")
+xx <- c(1, nrow(data2)/2, nrow(data2))
+axis(1, at = xx, labels=x)
 
 # saving the plot to plot1.png file
-dev.copy(png,'plot2.png')
+dev.copy(device = png,'plot2.png', width = 480, height = 480)
 
 # closign the file
 dev.off()
+
