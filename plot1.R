@@ -9,8 +9,9 @@ data2 <- subset(data1, strptime(V1, "%d/%m/%C%y") < strftime("2007/02/3", "%C%y-
 # OK, let's plot histogram for "Global Active Power" data
 hist(as.numeric(paste(data2$V3)), col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
 
+
 # saving the plot to plot1.png file
-dev.copy(png,'plot1.png')
+dev.copy(device = png,'plot1.png', width = 480, height = 480)
 
 # closign the file
 dev.off()
